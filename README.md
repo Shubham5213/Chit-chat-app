@@ -22,7 +22,7 @@ git clone https://github.com/Shubham5213/Chit-chat-app.git
 Go to the project directory
 
 ```bash
-  cd mern-chat-app
+  cd chit-chat-app
 ```
 
 Install dependencies
