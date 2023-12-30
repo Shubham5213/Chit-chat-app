@@ -16,7 +16,7 @@ Uses Socket.io for real time communication and stores user details in encrypted 
 Clone the project
 
 ```bash
-
+git clone https://github.com/Shubham5213/Chit-chat-app.git
 ```
 
 Go to the project directory
