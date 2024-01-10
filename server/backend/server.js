@@ -13,7 +13,7 @@ connectDB();
 const app = express();
 app.use(
   cors({
-    origin: ["https://frontend-shubham5213.vercel.app/"],
+    origin: ["https://frontend-shubham5213.vercel.app"],
     credentials: true,
   })
 );
