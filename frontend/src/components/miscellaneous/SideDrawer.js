@@ -26,11 +26,13 @@ import { useToast } from "@chakra-ui/toast";
 import ChatLoading from "../ChatLoading";
 import { Spinner } from "@chakra-ui/spinner";
 import ProfileModal from "./ProfileModal";
-import NotificationBadge from "react-notification-badge";
-import { Effect } from "react-notification-badge";
+// import NotificationBadge from "react-notification-badge";
+// import { Effect } from "react-notification-badge";
 import { getSender } from "../../config/ChatLogics";
 import UserListItem from "../userAvatar/UserListItem";
 import { ChatState } from "../../Context/ChatProvider";
+import { url } from "../../constant/constant";
+
 
 function SideDrawer() {
   const [search, setSearch] = useState("");
@@ -76,7 +78,7 @@ function SideDrawer() {
         },
       };
 
-      const { data } = await axios.get(`/api/user?search=${search}`, config);
+      const { data } = await axios.get(`${url}/api/user?search=${search}`, config);
 
       setLoading(false);
       console.log(searchResult);
@@ -104,7 +106,7 @@ function SideDrawer() {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.post(`/api/chat`, { userId }, config);
+      const { data } = await axios.post(`${url}/api/chat`, { userId }, config);
 
       if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
       setSelectedChat(data);
@@ -146,13 +148,13 @@ function SideDrawer() {
         </Text>
         <div>
           <Menu>
-            <MenuButton p={1}>
+            {/* <MenuButton p={1}>
               <NotificationBadge
                 count={notification.length}
                 effect={Effect.SCALE}
               />
               <BellIcon fontSize="2xl" m={1} />
-            </MenuButton>
+            </MenuButton> */}
             <MenuList pl={2}>
               {!notification.length && "No New Messages"}
               {notification.map((notif) => (

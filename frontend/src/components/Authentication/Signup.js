@@ -6,6 +6,7 @@ import { useToast } from "@chakra-ui/toast";
 import axios from "axios";
 import { useState } from "react";
 import { useHistory } from "react-router";
+import {url, cloudUrl} from "../../constant/constant";
 
 const Signup = () => {
   const [show, setShow] = useState(false);
@@ -43,7 +44,7 @@ const Signup = () => {
       });
       return;
     }
-    console.log(name, email, password, pic);
+    // console.log(name, email, password, pic);
     try {
       const config = {
         headers: {
@@ -51,7 +52,7 @@ const Signup = () => {
         },
       };
       const { data } = await axios.post(
-        "/api/user",
+        `${url}/api/user`,
         {
           name,
           email,
@@ -60,7 +61,7 @@ const Signup = () => {
         },
         config
       );
-      console.log(data);
+      // console.log(data);
       toast({
         title: "Registration Successful",
         status: "success",
@@ -96,13 +97,13 @@ const Signup = () => {
       });
       return;
     }
-    console.log(pics);
+    // console.log(pics);
     if (pics.type === "image/jpeg" || pics.type === "image/png") {
       const data = new FormData();
       data.append("file", pics);
       data.append("upload_preset", "chat-app");
       data.append("cloud_name", "dwhrwh3vy");
-      fetch("https://api.cloudinary.com/v1_1/dwhrwh3vy/image/upload", {
+      fetch(cloudUrl, {
         method: "post",
         body: data,
       })
