@@ -2,14 +2,16 @@
 
 Chat app is a Full Stack Chatting App.
 Uses Socket.io for real time communication and stores user details in encrypted format in Mongo DB Database.
->**_Link to hosted demo:_** https://frontend-shubham5213.vercel.app/
+
+> **_Link to hosted demo:_** https://frontend-shubham5213.vercel.app/
+
 ## Tech Stack
 
 **Client:** React JS
 
 **Server:** Node JS, Express JS
 
-**Database:** Mongo DB
+**Database:** MongoDB, MongoDB Altas for Cloud Storage
 
 ## Run Locally
 
@@ -27,7 +29,7 @@ Go to the project directory
 
 Install dependencies
 
-```bash 
+```bash
   cd server/
   npm install
 ```
